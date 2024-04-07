@@ -11,7 +11,7 @@ class OrderList extends HTMLElement {
     console.log(order.data);
 
     let items = order.data.map(element => {
-      return `<order-item order-data="${JSON.stringify(element)}"></order-item>`;
+      return `<order-item order-data='${JSON.stringify(element)}'></order-item>`;
     })
 
     return items.join('');
