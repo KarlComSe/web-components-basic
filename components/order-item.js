@@ -31,17 +31,17 @@ class OrderItem extends HTMLElement {
                 <h3>Order item</h3>
                 <p>This is an order item. Order data is passed from the order-list component as a complex attribute (JSON). It adds an order detail item, where data is provided through slots. It will also add a ul of type wc-ul and directly the associated li of type wc-il, where data is provided as plain text.</p>
                 <order-detail>
-                    <span name="name">${orderData.name}</span>
-                    <span name="address">${orderData.address}</span>
-                    <span name="zip">${orderData.zip}</span>
-                    <span name="city">${orderData.city}</span>
-                    <span name="country">${orderData.country}</span>
-                    <span name="status">${orderData.status}</span>
-                    <span name="status_id">${orderData.status_id}</span>
+                    <span slot="name">${orderData.name}</span>
+                    <span slot="address">${orderData.address}</span>
+                    <span slot="zip">${orderData.zip}</span>
+                    <span slot="city">${orderData.city}</span>
+                    <span slot="country">${orderData.country}</span>
+                    <span slot="status">${orderData.status}</span>
+                    <span slot="status_id">${orderData.status_id}</span>
                 </order-detail>
                 <ul is="wc-ul">
                     ${orderData.order_items.map(item => 
-                        `<li is="wc-li">${item.product_id}</li><li is="wc-li">${item.amount}</li><li is="wc-li">${item.name}</li>`
+                        `<li>Order line:</li><ul><li is="wc-li">${item.product_id}</li><li is="wc-li">${item.amount}</li><li is="wc-li">${item.name}</li></ul>`
                     ).join('')}
                 </ul>
             </div>
