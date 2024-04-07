@@ -23,6 +23,7 @@ class OrderList extends HTMLElement {
     shadowRoot.innerHTML = `
       <div class="order-list">
        <p>This is the order list</p>
+       <p>This component fetch some JSON data and pass it to the order-item component, which are also added here.</p>
       </div>
     `;
 
