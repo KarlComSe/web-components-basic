@@ -14,6 +14,7 @@ class WcMain extends HTMLElement {
             <p>This is the main-element which is specified with is = "wc-main".</p>
             <p>This utilize the shadow DOM, as it is required for slots to work.</p>
             <p>This utilizes slots, to replace the title.</p>
+            <slot></slot>
         `;
   }
 }
