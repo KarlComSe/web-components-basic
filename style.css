@@ -1,0 +1,8 @@
+main {
+    border: 5px solid red;
+}
+
+/* example of a class selector which isn't applied to the web components. */
+.ul {
+    border: 5px solid yellow;
+}

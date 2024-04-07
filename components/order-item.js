@@ -27,6 +27,16 @@ class OrderItem extends HTMLElement {
         const orderData = JSON.parse(this.getAttribute('order-data'));
         
         shadowRoot.innerHTML = `
+        <style>
+            .order-item {
+                border: 5px solid blue;
+                padding: 10px;
+            }
+            .order-lines {
+                border: 5px dotted blue;
+                padding: 10px;
+            }
+        </style>    
             <div class="order-item">
                 <h3>Order item</h3>
                 <p>This is an order item. Order data is passed from the order-list component as a complex attribute (JSON). It adds an order detail item, where data is provided through slots. It will also add a ul of type wc-ul and directly the associated li of type wc-il, where data is provided as plain text.</p>
@@ -39,11 +49,14 @@ class OrderItem extends HTMLElement {
                     <span slot="status">${orderData.status}</span>
                     <span slot="status_id">${orderData.status_id}</span>
                 </order-detail>
+                <div class="order-lines">
+                <p>This data is fully defined within the order-item component. Some components are specified as is="wc-ul" and is="wc-li", but these components are not implemented. Thus, the styling is done in order-item web component.</p>
                 <ul is="wc-ul">
                     ${orderData.order_items.map(item => 
                         `<li>Order line:</li><ul><li is="wc-li">${item.product_id}</li><li is="wc-li">${item.amount}</li><li is="wc-li">${item.name}</li></ul>`
                     ).join('')}
                 </ul>
+                </div>
             </div>
         `;
 

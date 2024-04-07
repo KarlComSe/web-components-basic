@@ -9,6 +9,12 @@ class OrderDetail extends HTMLElement {
         });
 
         shadowRoot.innerHTML = `
+            <style>
+                .order-detail {
+                    border: 5px solid maroon;
+                    padding: 10px;
+                }
+            </style>
             <div class="order-detail">
                 <h3>Order detail</h3>
                 <p>This is an order detail item. Data is provided through slots.</p>

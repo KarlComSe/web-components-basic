@@ -5,7 +5,7 @@ class OrderList extends HTMLElement {
 
   async addOrderItems() {
     let order;
-    order = await fetch("/order_data.json");
+    order = await fetch("./order_data.json");
     order = await order.json();
 
     console.log(order.data);
@@ -20,14 +20,21 @@ class OrderList extends HTMLElement {
   async connectedCallback() {
     const shadowRoot = this.attachShadow({ mode: "open" });
 
+    const orderItems = await this.addOrderItems();
+
     shadowRoot.innerHTML = `
+
+      <style>
+      .order-list {
+        border: 5px solid green;
+        padding: 10px;}
+      </style>
       <div class="order-list">
        <p>This is the order list</p>
        <p>This component fetch some JSON data and pass it to the order-item component, which are also added here.</p>
+        ${orderItems}
       </div>
     `;
-
-    shadowRoot.innerHTML += await this.addOrderItems();
   }
 
 
