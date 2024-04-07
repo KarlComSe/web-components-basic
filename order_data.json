@@ -1,0 +1,63 @@
+{
+    "data": [
+        {
+            "id": 10481,
+            "name": "Anders Andersson",
+            "address": "Andersgatan 1",
+            "zip": "12345",
+            "city": "Anderstorp",
+            "image_url": "",
+            "country": "Sweden",
+            "status": "Ny",
+            "status_id": 100,
+            "order_items": [
+                {
+                    "product_id": 36062,
+                    "amount": 2,
+                    "article_number": "1214-RNT",
+                    "name": "Skruv M14",
+                    "description": "Skruv M14, värmförsinkad",
+                    "specifiers": "{\"length\" : \"60mm\", \"width\" : \"14mm\"}",
+                    "stock": 12,
+                    "location": "A1B4",
+                    "price": 10
+                },
+                {
+                    "product_id": 36063,
+                    "amount": 3,
+                    "article_number": "1212-RNT",
+                    "name": "Skruv M12",
+                    "description": "…sinkad, passar 1214-RNT",
+                    "specifiers": "{\"diameter\" : \"14mm\"}",
+                    "stock": 13,
+                    "location": "A1C4",
+                    "price": 10
+                }
+            ]
+        },
+        {
+            "id": 10484,
+            "name": "Ulla Ullman",
+            "address": "Ullasallén 4",
+            "zip": "45678",
+            "city": "Ullared",
+            "image_url": "",
+            "country": "Sweden",
+            "status": "Ny",
+            "status_id": 100,
+            "order_items": [
+                {
+                    "product_id": 36069,
+                    "amount": 6,
+                    "article_number": "1210-TNT",
+                    "name": "Mutter M10",
+                    "description": "Mutter M10, värmförsinkad, passar 1210-RNT",
+                    "specifiers": "{\"diameter\" : \"10mm\"}",
+                    "stock": 12,
+                    "location": "A1C4",
+                    "price": 10
+                }
+            ]
+        }
+    ]
+}
