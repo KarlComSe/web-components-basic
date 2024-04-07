@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Components</title>
+</head>
+<body>
+    <header is="wc-header"></header>
+    <main is="wc-main">
+        <order-list>
+            <order-item>
+                <order-line-list> <!-- or <ul is="wc-ul"> -->
+                    <order-line> <!-- or <li is="wc-li"> -->
+                    </order-line>
+                    <order-line>
+                    </order-line>
+                </order-line-list>
+            </order-item>
+            <order-item>
+                <order-line-list>
+                    <order-line>
+                    </order-line>
+                </order-line-list>
+            </order-item>
+        </order-list>
+    </main>
+    <footer is="wc-footer"></footer>
+    <script src="main.js"></script>
+</body>
+</html>
