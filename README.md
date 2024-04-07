@@ -8,29 +8,30 @@ Simple page with a header, footer and a main content area. The main area will co
 
 The page will display a list of orders with details and order lines.
 
-## Requirements
+## What I aim to do
 
 - Use standard HTML elements with is="wc-*" syntax.
 - Create custom web componentst elements with complex attributes.
 - Apply best practice and use common patterns:
   - Shadow DOM, constructor, connectedCallback, disconnectedCallback (not used), attributeChangedCallback, observedAttributes.
 - Use slots to pass content to the custom elements.
-- Use template to create the shadow DOM.
+- Use template to create the shadow DOM. (Not implemented)
 
 ## Files
 
-main.js
-index.html
-style.css
-components/
-    - wc-header.js : non custom element, is="wc-header"
-    - wc-footer.js : non custom element, is="wc-footer"
-    - main.js : non custom element, is="wc-main"
-    - order-list.js : custom element, order-list
-    - order-detail.js : custom element, order-detail
-    - order-item.js : custom element, order-item
-    - wc-ul.js : non custom element, is="wc-ul" / order-line-list.js : custom element, order-line-list
-    - wc-li.js : non custom element, is="wc-li" / order-line.js : custom element, order-line
+- main.js
+- index.html
+- style.css
+- components/
+ -- wc-header.js : non custom element, is="wc-header"
+ -- wc-footer.js : non custom element, is="wc-footer"
+ -- main.js : non custom element, is="wc-main"
+ -- order-list.js : custom element, order-list
+ -- order-detail.js : custom element, order-detail
+ -- order-item.js : custom element, order-item
+ -- wc-ul.js : non custom element, is="wc-ul" / order-line-list.js : custom element, order-line-list
+ -- wc-li.js : non custom element, is="wc-li" / order-line.js : custom element, order-line
+
 order_data.json : Example data fetched and created from <https://lager.emilfolino.se/v2>. This example will use static data.
 
 ## HTML outline
