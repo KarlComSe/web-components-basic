@@ -28,6 +28,7 @@ class OrderList extends HTMLElement {
       .order-list {
         border: 5px solid green;
         padding: 10px;}
+        
       </style>
       <div class="order-list">
        <p>This is the order list</p>

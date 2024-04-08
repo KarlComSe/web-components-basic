@@ -36,10 +36,25 @@ class OrderItem extends HTMLElement {
                 border: 5px dotted blue;
                 padding: 10px;
             }
+            :host {
+                background-color: beige; 
+                padding: 10px;
+                display: block;
+            }
+            :host::before {
+                padding: 20px;
+                content: " (Aesthetically pleasing and subtle styling applied with host:before within the order item custom element.)";
+                color: black;
+                display: block;
+                background-color: yellow;
+                text-align: center;
+            }
         </style>    
             <div class="order-item">
                 <h3>Order item</h3>
                 <p>This is an order item. Order data is passed from the order-list component as a complex attribute (JSON). It adds an order detail item, where data is provided through slots. It will also add a ul of type wc-ul and directly the associated li of type wc-il, where data is provided as plain text.</p>
+                <p>Additional styling is applied through the :host selector, which is a pseudo selector for the custom element itself. There are some points which are easy to get wrong here, e.g., the custom element itself is without dimensions, meaning that a background-color will not be visible unless there is some dimension attribute (such as padding) or display:block. However, text styling is applied without specifying any dimensions. </p>
+                <p>Styling is also applied through :host::before.</p>
                 <order-detail>
                     <span slot="name">${orderData.name}</span>
                     <span slot="address">${orderData.address}</span>
