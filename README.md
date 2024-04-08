@@ -23,14 +23,14 @@ The page will display a list of orders with details and order lines.
 - index.html
 - style.css
 - components/
- -- wc-header.js : non custom element, is="wc-header"
- -- wc-footer.js : non custom element, is="wc-footer"
- -- main.js : non custom element, is="wc-main"
- -- order-list.js : custom element, order-list
- -- order-detail.js : custom element, order-detail
- -- order-item.js : custom element, order-item
- -- wc-ul.js : non custom element, is="wc-ul" / order-line-list.js : custom element, order-line-list
- -- wc-li.js : non custom element, is="wc-li" / order-line.js : custom element, order-line
+  - wc-header.js : non custom element, is="wc-header"
+  - wc-footer.js : non custom element, is="wc-footer"
+  - main.js : non custom element, is="wc-main"
+  - order-list.js : custom element, order-list
+  - order-detail.js : custom element, order-detail
+  - order-item.js : custom element, order-item
+  - wc-ul.js : non custom element, is="wc-ul" / order-line-list.js : custom element, order-line-list
+  - wc-li.js : non custom element, is="wc-li" / order-line.js : custom element, order-line
 
 order_data.json : Example data fetched and created from <https://lager.emilfolino.se/v2>. This example will use static data.
 
@@ -150,7 +150,7 @@ The basic naming convention is that there needs to be a dash as no standard HTML
 
 ### Why not just use standard HTML?
 
-Good question. It make sense to use standard HTML elements whenever possible. As stated in the pitfall section, it is easy to overdo it with custom elements.
+Good question. It make sense to use standard HTML elements whenever possible. As stated in the pitfall section, it is easy to overdo it with custom elements. Another reason to just standard elements or to extend standard elements is that all behaviors of standard elements are not implemented in custom elements (see the WHATWG resource). 
 
 ## Possible next step
 
@@ -162,6 +162,8 @@ Good question. It make sense to use standard HTML elements whenever possible. As
 ## Resources on web components
 
 - [MDN Web Components](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
+- On styling: https://javascript.info/shadow-dom-style
+- Web Hypertext Application Technology Working Group (WHATWG), Living Standard on Custom Elements: https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements
 - To be reviewed: <https://learning.oreilly.com/course/learn-practical-web/9781838649173/>
 
 ## Web Components generic code
