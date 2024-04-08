@@ -13,11 +13,19 @@ class OrderDetail extends HTMLElement {
                 .order-detail {
                     border: 5px solid maroon;
                     padding: 10px;
+                    color: var(--custom-dom-penetrating-color);
+                }
+                .black {
+                    color: black;
+                }
+                .magneta {
+                    color: var(--custom-dom-penetrating-color);
                 }
             </style>
             <div class="order-detail">
                 <h3>Order detail</h3>
                 <p>This is an order detail item. Data is provided through slots.</p>
+                <p class="black">Styling, i.e. the <span class="magneta">fancy color</span>, is done through DOM penetrating CSS variables, which is defined in style.css file (--custom-dom-penetrating-color: magenta;), and then applied within this component through color:var(--custom-dom-penetrating-color).</p>
                 <ul>
                     <li><slot name="name"></slot></li>
                     <li><slot name="address"></slot></li>

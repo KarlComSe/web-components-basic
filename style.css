@@ -2,3 +2,13 @@
 .ul {
     border: 5px solid yellow;
 }
+
+/* example of a custom property that is applied to the web components. */
+html {
+    --custom-dom-penetrating-color: magenta;
+}
+
+h1 {
+    color: var(--custom-dom-penetrating-color);
+}
+
