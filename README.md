@@ -76,6 +76,26 @@ See order_data.json.
 
 ## Reflections
 
+### Importance of this.attachShadow
+
+Consider the following example, where the attachShadow-method is called in connectedCallback(). The attachShadow-method creates a shadow DOM, attaches it to the custom element's DOM and returns the shadow DOM. **This enables the use of this.shadowRoot to access the shadow DOM, anywhere in the class**.
+
+```javascript
+class WcMain extends HTMLElement {
+  constructor() {
+    super();
+  }
+
+  connectedCallback() {
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
+          Some text
+        `;
+  }
+}
+```
+
+
 ### Pitfall: creating custom elements for everything
 
 It is easy to imagine a complex structure, and that each element needs to be its own web component. The above structure is such an example. It would be far easier to just make an order item, which by itself defines what to show. Make the component do most of the work. There could be one or two "sub" web components, defining e.g. basic customer info and order line item, if there could be reuse.
