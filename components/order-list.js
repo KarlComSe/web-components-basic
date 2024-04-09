@@ -1,28 +1,29 @@
 class OrderList extends HTMLElement {
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  async addOrderItems() {
-    let order;
-    order = await fetch("./order_data.json");
-    order = await order.json();
+    async addOrderItems() {
+        let order;
 
-    console.log(order.data);
+        order = await fetch("./order_data.json");
+        order = await order.json();
 
-    let items = order.data.map(element => {
-      return `<order-item order-data='${JSON.stringify(element)}'></order-item>`;
-    })
+        console.log(order.data);
 
-    return items.join('');
-  }
+        let items = order.data.map(element => {
+            return `<order-item order-data='${JSON.stringify(element)}'></order-item>`;
+        });
 
-  async connectedCallback() {
-    const shadowRoot = this.attachShadow({ mode: "open" });
+        return items.join('');
+    }
 
-    const orderItems = await this.addOrderItems();
+    async connectedCallback() {
+        const shadowRoot = this.attachShadow({ mode: "open" });
 
-    shadowRoot.innerHTML = `
+        const orderItems = await this.addOrderItems();
+
+        shadowRoot.innerHTML = `
 
       <style>
       .order-list {
@@ -32,13 +33,12 @@ class OrderList extends HTMLElement {
       </style>
       <div class="order-list">
        <p>This is the order list</p>
-       <p>This component fetch some JSON data and pass it to the order-item component, which are also added here.</p>
+       <p>This component fetch some JSON data and pass it to the order-item component,
+        which are also added here.</p>
         ${orderItems}
       </div>
     `;
-  }
-
-
+    }
 }
 
 export default OrderList;
